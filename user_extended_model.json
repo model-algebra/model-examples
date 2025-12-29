@@ -1,0 +1,23 @@
+{
+	"metadata": {
+		"name": "User extended model",
+		"version": "1.0.0"
+	},
+	"fields": [
+		{
+			"name": "birthdate",
+			"type": "date",
+			"description": "Birth date"
+		},
+		{
+			"name": "fatherName",
+			"type": "string",
+			"description": "Father name"
+		},
+		{
+			"name": "address",
+			"type": "string",
+			"description": "Address"
+		}
+	]
+}

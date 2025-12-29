@@ -1,0 +1,54 @@
+{
+	"title": "Town Core Model",
+	"type": "object",
+	"properties": {
+		"metadata": {
+			"type": "object",
+			"properties": {
+				"name": {
+					"type": "string"
+				},
+				"version": {
+					"type": "string",
+					"pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$"
+				}
+			},
+			"required": [
+				"name",
+				"version"
+			]
+		},
+		"fields": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"name": {
+						"type": "string"
+					},
+					"type": {
+						"type": "string"
+					},
+					"description": {
+						"type": "string"
+					},
+					"constraints": {
+						"type": "object",
+						"properties": {
+							"primaryKey": {
+								"type": "boolean"
+							},
+							"nullable": {
+								"type": "boolean"
+							}
+						}
+					}
+				},
+				"required": [
+					"name",
+					"type"
+				]
+			}
+		}
+	}
+}

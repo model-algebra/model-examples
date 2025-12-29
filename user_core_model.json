@@ -1,0 +1,38 @@
+{
+	"metadata": {
+		"name": "User",
+		"version": "1.0.0"
+	},
+	"fields": [
+		{
+			"name": "id",
+			"type": "integer",
+			"description": "Main index",
+			"constraints": {
+				"primaryKey": true,
+				"nullable": false
+			}
+		},
+		{
+			"name": "userName",
+			"type": "string",
+			"description": "Login name",
+			"constraints": {
+				"nullable": false
+			}
+		},
+		{
+			"name": "firstName",
+			"type": "string",
+			"description": "First name",
+			"constraints": {
+				"nullable": false
+			}
+		},
+		{
+			"name": "secondName",
+			"type": "string",
+			"description": "Second name"
+		}
+	]
+}
