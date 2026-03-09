@@ -1,0 +1,122 @@
+{
+	"metadata": {
+		"name": "AllTypes",
+		"version": "1.0.0"
+	},
+	"fields": [
+		{
+			"name": "int32Field",
+			"type": "INT32",
+			"description": "32-bit integer"
+		},
+		{
+			"name": "int64Field",
+			"type": "INT64",
+			"description": "64-bit integer"
+		},
+		{
+			"name": "float32Field",
+			"type": "FLOAT32",
+			"description": "32-bit floating point"
+		},
+		{
+			"name": "float64Field",
+			"type": "FLOAT64",
+			"description": "64-bit floating point"
+		},
+		{
+			"name": "decimalField",
+			"type": "DECIMAL",
+			"description": "Decimal with precision and scale",
+			"parameters": {
+				"precision": 10,
+				"scale": 2
+			}
+		},
+		{
+			"name": "booleanField",
+			"type": "BOOLEAN",
+			"description": "Boolean value"
+		},
+		{
+			"name": "stringField",
+			"type": "STRING",
+			"description": "Variable-length string",
+			"parameters": {
+				"length": 255
+			}
+		},
+		{
+			"name": "textField",
+			"type": "TEXT",
+			"description": "Unlimited text"
+		},
+		{
+			"name": "uuidField",
+			"type": "UUID",
+			"description": "Universally unique identifier"
+		},
+		{
+			"name": "dateField",
+			"type": "DATE",
+			"description": "Date without time"
+		},
+		{
+			"name": "timeField",
+			"type": "TIME",
+			"description": "Time without date"
+		},
+		{
+			"name": "datetimeField",
+			"type": "DATETIME",
+			"description": "Date and time without timezone"
+		},
+		{
+			"name": "timestampField",
+			"type": "TIMESTAMP",
+			"description": "Unix timestamp"
+		},
+		{
+			"name": "timestampTzField",
+			"type": "TIMESTAMP_TZ",
+			"description": "Timestamp with timezone"
+		},
+		{
+			"name": "durationField",
+			"type": "DURATION",
+			"description": "Time duration"
+		},
+		{
+			"name": "objectField",
+			"type": "OBJECT",
+			"description": "Reference to another model",
+			"parameters": {
+				"ref": "User"
+			}
+		},
+		{
+			"name": "enumField",
+			"type": "ENUM",
+			"description": "Enumeration of string values",
+			"parameters": {
+				"values": ["ACTIVE", "INACTIVE", "PENDING"]
+			}
+		},
+		{
+			"name": "unionField",
+			"type": "UNION",
+			"description": "Union of multiple types",
+			"parameters": {
+				"oneOf": [
+					{ "type": "STRING" },
+					{ "type": "INT32" }
+				]
+			}
+		},
+		{
+			"name": "jsonField",
+			"type": "JSON",
+			"description": "Arbitrary JSON value"
+		}
+	]
+}
