@@ -1,6 +1,6 @@
 {
 	"metadata": {
-		"name": "User`",
+		"name": "User",
 		"version": "1.0.0"
 	},
 	"fields": [
@@ -9,6 +9,7 @@
 			"type": "integer",
 			"description": "Main index",
 			"constraints": {
+				"primaryKey": true,
 				"nullable": false
 			}
 		},
@@ -23,7 +24,10 @@
 		{
 			"name": "firstName",
 			"type": "string",
-			"description": "First name"
+			"description": "First name",
+			"constraints": {
+				"nullable": false
+			}
 		},
 		{
 			"name": "secondName",
@@ -44,6 +48,31 @@
 			"name": "address",
 			"type": "string",
 			"description": "Address"
+		},
+		{
+			"name": "phone",
+			"type": "string",
+			"description": "Phone number in E.164 format",
+			"constraints": {
+				"regex": "^\\+?[1-9]\\d{1,14}$"
+			}
+		},
+		{
+			"name": "hairColor",
+			"type": "string",
+			"description": "Hair color",
+			"constraints": {
+				"enum": ["black", "brown", "blonde", "red", "auburn", "gray", "white"]
+			}
+		},
+		{
+			"name": "height",
+			"type": "number",
+			"description": "Height in centimeters",
+			"constraints": {
+				"min": 50,
+				"max": 272
+			}
 		}
 	]
 }
