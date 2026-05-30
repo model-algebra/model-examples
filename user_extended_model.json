@@ -18,6 +18,31 @@
 			"name": "address",
 			"type": "string",
 			"description": "Address"
+		},
+		{
+			"name": "phone",
+			"type": "string",
+			"description": "Phone number in E.164 format",
+			"constraints": {
+				"regex": "^\\+?[1-9]\\d{1,14}$"
+			}
+		},
+		{
+			"name": "hairColor",
+			"type": "string",
+			"description": "Hair color",
+			"constraints": {
+				"enum": ["black", "brown", "blonde", "red", "auburn", "gray", "white"]
+			}
+		},
+		{
+			"name": "height",
+			"type": "number",
+			"description": "Height in centimeters",
+			"constraints": {
+				"min": 50,
+				"max": 272
+			}
 		}
 	]
 }
