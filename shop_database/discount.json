@@ -1,0 +1,56 @@
+{
+	"metadata": {
+		"name": "Discount",
+		"version": "1.0.0"
+	},
+	"fields": [
+		{
+			"name": "id",
+			"type": "INT32",
+			"description": "Primary key",
+			"constraints": {
+				"primaryKey": true,
+				"nullable": false
+			}
+		},
+		{
+			"name": "code",
+			"type": "STRING",
+			"description": "Discount code",
+			"parameters": {
+				"length": 50
+			},
+			"constraints": {
+				"nullable": false
+			}
+		},
+		{
+			"name": "percentage",
+			"type": "DECIMAL",
+			"description": "Discount percentage",
+			"parameters": {
+				"precision": 5,
+				"scale": 2
+			},
+			"constraints": {
+				"nullable": false
+			}
+		},
+		{
+			"name": "validFrom",
+			"type": "DATE",
+			"description": "Start date of validity",
+			"constraints": {
+				"nullable": false
+			}
+		},
+		{
+			"name": "validTo",
+			"type": "DATE",
+			"description": "End date of validity",
+			"constraints": {
+				"nullable": false
+			}
+		}
+	]
+}

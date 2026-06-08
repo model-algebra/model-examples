@@ -1,0 +1,84 @@
+{
+	"metadata": {
+		"name": "Order",
+		"version": "1.0.0"
+	},
+	"fields": [
+		{
+			"name": "id",
+			"type": "INT32",
+			"description": "Primary key",
+			"constraints": {
+				"primaryKey": true,
+				"nullable": false
+			}
+		},
+		{
+			"name": "userId",
+			"type": "INT32",
+			"description": "Reference to the user who placed the order",
+			"constraints": {
+				"nullable": false,
+				"foreign_key": {
+					"ref": "User",
+					"field": "id"
+				}
+			}
+		},
+		{
+			"name": "deliveryTypeId",
+			"type": "INT32",
+			"description": "Reference to the selected delivery type",
+			"constraints": {
+				"nullable": false,
+				"foreign_key": {
+					"ref": "DeliveryType",
+					"field": "id"
+				}
+			}
+		},
+		{
+			"name": "discountId",
+			"type": "INT32",
+			"description": "Reference to applied discount (optional)",
+			"constraints": {
+				"nullable": true,
+				"foreign_key": {
+					"ref": "Discount",
+					"field": "id"
+				}
+			}
+		},
+		{
+			"name": "status",
+			"type": "ENUM",
+			"description": "Order status",
+			"parameters": {
+				"values": ["PENDING", "CONFIRMED", "SHIPPED", "DELIVERED", "CANCELLED"]
+			},
+			"constraints": {
+				"nullable": false
+			}
+		},
+		{
+			"name": "totalPrice",
+			"type": "DECIMAL",
+			"description": "Total order price",
+			"parameters": {
+				"precision": 10,
+				"scale": 2
+			},
+			"constraints": {
+				"nullable": false
+			}
+		},
+		{
+			"name": "createdAt",
+			"type": "TIMESTAMP",
+			"description": "Order creation timestamp",
+			"constraints": {
+				"nullable": false
+			}
+		}
+	]
+}

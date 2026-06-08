@@ -1,0 +1,58 @@
+{
+	"metadata": {
+		"name": "User",
+		"version": "1.0.0"
+	},
+	"fields": [
+		{
+			"name": "id",
+			"type": "INT32",
+			"description": "Primary key",
+			"constraints": {
+				"primaryKey": true,
+				"nullable": false
+			}
+		},
+		{
+			"name": "userName",
+			"type": "STRING",
+			"description": "Login name",
+			"parameters": {
+				"length": 100
+			},
+			"constraints": {
+				"nullable": false
+			}
+		},
+		{
+			"name": "email",
+			"type": "STRING",
+			"description": "Email address",
+			"parameters": {
+				"length": 255
+			},
+			"constraints": {
+				"nullable": false
+			}
+		},
+		{
+			"name": "passwordHash",
+			"type": "STRING",
+			"description": "Hashed password",
+			"parameters": {
+				"length": 255
+			},
+			"constraints": {
+				"nullable": false
+			}
+		},
+		{
+			"name": "createdAt",
+			"type": "TIMESTAMP",
+			"description": "Account creation timestamp",
+			"constraints": {
+				"nullable": false
+			}
+		}
+	]
+}

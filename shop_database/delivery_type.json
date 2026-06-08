@@ -1,0 +1,48 @@
+{
+	"metadata": {
+		"name": "DeliveryType",
+		"version": "1.0.0"
+	},
+	"fields": [
+		{
+			"name": "id",
+			"type": "INT32",
+			"description": "Primary key",
+			"constraints": {
+				"primaryKey": true,
+				"nullable": false
+			}
+		},
+		{
+			"name": "name",
+			"type": "STRING",
+			"description": "Delivery type name",
+			"parameters": {
+				"length": 100
+			},
+			"constraints": {
+				"nullable": false
+			}
+		},
+		{
+			"name": "description",
+			"type": "TEXT",
+			"description": "Delivery type description",
+			"constraints": {
+				"nullable": true
+			}
+		},
+		{
+			"name": "price",
+			"type": "DECIMAL",
+			"description": "Delivery price",
+			"parameters": {
+				"precision": 10,
+				"scale": 2
+			},
+			"constraints": {
+				"nullable": false
+			}
+		}
+	]
+}

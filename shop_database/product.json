@@ -1,0 +1,56 @@
+{
+	"metadata": {
+		"name": "Product",
+		"version": "1.0.0"
+	},
+	"fields": [
+		{
+			"name": "id",
+			"type": "INT32",
+			"description": "Primary key",
+			"constraints": {
+				"primaryKey": true,
+				"nullable": false
+			}
+		},
+		{
+			"name": "name",
+			"type": "STRING",
+			"description": "Product name",
+			"parameters": {
+				"length": 255
+			},
+			"constraints": {
+				"nullable": false
+			}
+		},
+		{
+			"name": "description",
+			"type": "TEXT",
+			"description": "Product description",
+			"constraints": {
+				"nullable": true
+			}
+		},
+		{
+			"name": "price",
+			"type": "DECIMAL",
+			"description": "Product price",
+			"parameters": {
+				"precision": 10,
+				"scale": 2
+			},
+			"constraints": {
+				"nullable": false
+			}
+		},
+		{
+			"name": "stockQuantity",
+			"type": "INT32",
+			"description": "Available stock quantity",
+			"constraints": {
+				"nullable": false
+			}
+		}
+	]
+}
