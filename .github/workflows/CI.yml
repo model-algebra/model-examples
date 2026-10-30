@@ -1,0 +1,20 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      # Models are not validated against model-schema here: invalid_model.json is
+      # invalid on purpose, and other examples use types the schema does not list yet
+      - name: Check JSON syntax
+        run: git ls-files -z '*.json' | xargs -0 -n1 sh -c 'jq empty "$0" || { echo "Invalid JSON: $0"; exit 255; }'
