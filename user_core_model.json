@@ -32,7 +32,10 @@
 		{
 			"name": "secondName",
 			"type": "string",
-			"description": "Second name"
+			"description": "Second name",
+			"constraints": {
+				"nullable": true
+			}
 		}
 	]
 }
