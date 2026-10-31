@@ -23,8 +23,8 @@ typescript-bridge.
 | `user_db_model.json` | An early draft of database options in a model; not valid against the schema |
 | `town_core_model.json` | A JSON Schema of a Town model, not a model |
 
-`user_extended_model.json` and `user_core_add_extended.json` use the type `date`. The bridges accept it, but
-`model-schema.json` does not list it among the older lowercase types, so these two don't validate.
+All other models validate against `model-schema.json`. CI checks only that every file is valid JSON, because these
+three are not valid models on purpose.
 
 ## Operation results
 
