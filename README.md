@@ -13,6 +13,7 @@ typescript-bridge.
 | `user_extended_model.json` | User extended model | More user fields: birth date, address, phone with a regex, hair color with allowed values, height |
 | `user_core_add_extended.json` | User | The union of the two above: what `add` must give |
 | `all_types_model.json` | AllTypes | One field of every canonical type |
+| `person_search_model.json` | Person | Sortable and filterable fields, named sort orders and filters |
 | `shop_database/*.json` | User, Product, Order, DeliveryType, Discount | Related models of a shop, with foreign keys between them |
 
 ## Invalid and other files

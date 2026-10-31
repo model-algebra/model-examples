@@ -1,0 +1,164 @@
+{
+	"metadata": {
+		"name": "Person",
+		"version": "1.0.0",
+		"description": "People to search for: sortable and filterable fields, named sort orders and filters"
+	},
+	"fields": [
+		{
+			"name": "id",
+			"type": "INT64",
+			"constraints": {
+				"primaryKey": true,
+				"identity": "always",
+				"nullable": false
+			}
+		},
+		{
+			"name": "lastName",
+			"type": "STRING",
+			"parameters": {
+				"length": 100
+			},
+			"constraints": {
+				"nullable": false
+			},
+			"sortable": {
+				"plain": {},
+				"caseless": {
+					"function": "lower"
+				}
+			},
+			"filterable": {
+				"equals": {
+					"op": "="
+				},
+				"prefix": {
+					"predicate": "startsWith",
+					"argument": true
+				},
+				"similar": {
+					"predicate": "soundsLike",
+					"argument": {
+						"type": "TEXT"
+					}
+				}
+			}
+		},
+		{
+			"name": "firstName",
+			"type": "STRING",
+			"parameters": {
+				"length": 100
+			},
+			"sortable": true,
+			"filterable": {
+				"op": "=",
+				"function": "lower"
+			}
+		},
+		{
+			"name": "age",
+			"type": "INT16",
+			"constraints": {
+				"min": 0
+			},
+			"sortable": {
+				"direction": "desc",
+				"nulls": "last"
+			},
+			"filterable": {
+				"ops": [
+					">=",
+					"<="
+				]
+			}
+		},
+		{
+			"name": "status",
+			"type": "ENUM",
+			"parameters": {
+				"values": [
+					"ACTIVE",
+					"BLOCKED"
+				]
+			},
+			"filterable": {
+				"any": {
+					"op": "="
+				},
+				"active": {
+					"op": "=",
+					"value": "ACTIVE"
+				}
+			}
+		},
+		{
+			"name": "email",
+			"type": "STRING",
+			"parameters": {
+				"length": 200
+			},
+			"filterable": {
+				"predicate": "isBlank"
+			}
+		},
+		{
+			"name": "registeredAt",
+			"type": "TIMESTAMP_TZ",
+			"sortable": true,
+			"filterable": {
+				"after": {
+					"op": ">"
+				},
+				"sinceBirth": {
+					"op": ">=",
+					"otherField": "bornAt"
+				}
+			}
+		},
+		{
+			"name": "bornAt",
+			"type": "TIMESTAMP_TZ"
+		}
+	],
+	"sortings": {
+		"byName": [
+			{
+				"field": "lastName"
+			},
+			{
+				"field": "firstName"
+			}
+		],
+		"newest": [
+			{
+				"field": "registeredAt",
+				"direction": "desc",
+				"nulls": "last"
+			}
+		],
+		"relevance": [
+			{
+				"function": "relevanceOf",
+				"direction": "desc"
+			}
+		]
+	},
+	"filters": {
+		"adults": {
+			"field": "age",
+			"op": ">=",
+			"value": 18
+		},
+		"verified": {
+			"predicate": "isVerified"
+		},
+		"nearby": {
+			"predicate": "isWithinKm",
+			"argument": {
+				"type": "FLOAT64"
+			}
+		}
+	}
+}
